@@ -38,6 +38,11 @@ public class Message: MonoBehaviour {
     }
 
     // -- commands --
+    public void Show(string msg) {
+        StartFall();
+        m_Text.text = msg;
+    }
+
     /// moves the message to the fall height
     void StartFall() {
         var p = m_Root.position;

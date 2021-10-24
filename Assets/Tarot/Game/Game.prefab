@@ -45,7 +45,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dbced661d2f4bb89c69d979b7a87bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerConfigs: []
+  m_PlayerConfigs:
+  - Index: 0
+    Input:
+      Wand: 1
+      Sword: 0
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 1
+    Input:
+      Wand: 2
+      Sword: 0
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 2
+    Input:
+      Wand: 2
+      Sword: 0
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 3
+    Input:
+      Wand: 4
+      Sword: 0
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 4
+    Input:
+      Wand: 5
+      Sword: 0
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 5
+    Input:
+      Wand: 0
+      Sword: 1
+    Key: 0
+    Instrument: {fileID: 0}
+  - Index: 6
+    Input:
+      Wand: 0
+      Sword: 2
+    Key: 0
+    Instrument: {fileID: 0}
 --- !u!114 &1010824611441724978
 MonoBehaviour:
   m_ObjectHideFlags: 0

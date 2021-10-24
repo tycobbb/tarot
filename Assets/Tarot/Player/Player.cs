@@ -7,6 +7,9 @@ public class Player: MonoBehaviour {
     /// the score module
     Score m_Score;
 
+    /// the message module
+    Message m_Message;
+
     // -- tuning --
     [Tooltip("plays music")]
     [SerializeField] Musicker mMusic;
@@ -28,12 +31,17 @@ public class Player: MonoBehaviour {
     void Awake() {
         // set deps
         m_Score = Score.Get;
+        m_Message = Message.Get;
 
         // set props
         m_Actions = new PlayerActions(mInput);
 
         // apply config
         Configure();
+    }
+
+    void Start() {
+        Announce();
     }
 
     // -- commands --
@@ -55,5 +63,10 @@ public class Player: MonoBehaviour {
 
         // show score
         m_Score.AddPlayer(cfg);
+    }
+
+    /// announce this player joining
+    void Announce() {
+        m_Message.Show(m_Config.Input.Wand.ToString());
     }
 }
