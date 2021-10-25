@@ -16,6 +16,26 @@ public class Game: MonoBehaviour {
     /// the array of players
     Player[] m_Players = new Player[7];
 
+    // -- lifecycle --
+    void Update() {
+        var k = Keyboard.current;
+
+        var ctrl = k.ctrlKey;
+        var r = k.rKey;
+        var s = k.sKey;
+
+        if (ctrl.isPressed && r.wasPressedThisFrame) {
+            Reset();
+        }
+
+        if (ctrl.isPressed && s.wasPressedThisFrame) {
+            Screenshot();
+        }
+
+        var man = GetComponent<PlayerInputManager>();
+
+    }
+
     // -- commands --
     /// add a new player to the game
     void AddPlayer(Player player) {
@@ -42,16 +62,6 @@ public class Game: MonoBehaviour {
     }
 
     // -- events --
-    /// catch the reset input event
-    public void OnReset(InputAction.CallbackContext ctx) {
-        Reset();
-    }
-
-    /// catch the screenshot input event
-    public void OnScreenshot(InputAction.CallbackContext ctx) {
-        Screenshot();
-    }
-
     /// catch the player joined event
     public void OnPlayerJoined(Object obj) {
         // ignore call on startup where obj is the game (b/c it has an input?)
